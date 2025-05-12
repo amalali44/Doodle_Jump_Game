@@ -23,3 +23,23 @@
   background-image: url('platform3.png');
   position: absolute;
 }
+
+#start-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+  /* Use a more cursive font */
+  background-color: #e089a2;
+  color: white;
+  border: 1px solid #ab546c;
+  text-align: center;
+  border-radius: 15px;
+  border-width: 3.5px;
+  cursor: pointer;
+  z-index: 10;
+  /* Ensures it appears above other elements */
+}

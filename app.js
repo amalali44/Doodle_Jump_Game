@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   const doodler = document.createElement('div')
+  const startButton = document.getElementById('start-button')
   let isGameOver = false
   let speed = 4
   let platformCount = 6
@@ -183,12 +184,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function start() {
     if (!isGameOver) {
-      createPlatforms()
-      createDoodler()
-      setInterval(movePlatforms, 30)
-      jump(startPoint)
-      document.addEventListener('keyup', control)
+      // Hide the start button
+      startButton.style.display = 'none';
+
+      createPlatforms();
+      createDoodler();
+      setInterval(movePlatforms, 30);
+      jump(startPoint);
+      document.addEventListener('keyup', control);
     }
   }
-  start()
+
+  // Attach the start function to the button's click event
+  startButton.addEventListener('click', start)
 })

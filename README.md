@@ -1,2 +1,2 @@
 # Doodle_Jump_Game
-A little game built with js, html and css to learn js methods
+A Doodle Jump game clone built with JavaScript, HTML and CSS to learn js methods

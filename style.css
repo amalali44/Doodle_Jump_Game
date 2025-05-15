@@ -1,6 +1,6 @@
 .grid {
   width: 480px;
-  height: 620px;
+  height: 700px;
   background-image: url('background4.png');
   position: relative;
   font-size: 80px;
@@ -24,9 +24,40 @@
   position: absolute;
 }
 
+
+#start-title {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-family: 'Pacifico', cursive;
+  color: #ca2755;
+  text-align: start;
+  white-space: nowrap;
+  /* Prevent the text from wrapping to the next line */
+
+  z-index: 10;
+}
+
+
+#instructions {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  white-space: nowrap;
+  font-family: 'Pacifico', cursive;
+  font-variant: inherit;
+  color: #c04367b8;
+  text-align: center;
+  z-index: 10;
+}
+
 #start-button {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 20px;
@@ -42,4 +73,45 @@
   cursor: pointer;
   z-index: 10;
   /* Ensures it appears above other elements */
+}
+
+#restart-button {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+  background-color: #ab546c;
+  color: white;
+  border: 1px solid #e089a2;
+  text-align: center;
+  border-radius: 15px;
+  border-width: 3.5px;
+  cursor: pointer;
+  z-index: 10;
+  display: none;
+  /* Initially hidden */
+}
+
+.score-container {
+  color: white;
+  position: absolute;
+  padding: 10px 20px;
+  background-color: #d8b0bb;
+  color: white;
+  border: 1px solid #7c1d38;
+  border-radius: 15px;
+  border-width: 5px;
+  top: 25%;
+  left: 22%;
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+.score-container .current-score,
+.score-container .highest-score {
+  color: rgb(201, 43, 69);
 }

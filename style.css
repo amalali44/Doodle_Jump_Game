@@ -31,9 +31,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 60px;
+  position: absolute;
   font-family: 'Pacifico', cursive;
   color: #ca2755;
-  text-align: start;
+  text-align: center;
   white-space: nowrap;
   /* Prevent the text from wrapping to the next line */
 
@@ -55,6 +56,7 @@
   z-index: 10;
 }
 
+/* To do: fix the title and buttons to stay within the background like the scoreboard does*/
 #start-button {
   position: absolute;
   top: 60%;
@@ -67,12 +69,13 @@
   background-color: #e089a2;
   color: white;
   border: 1px solid #ab546c;
-  text-align: center;
   border-radius: 15px;
   border-width: 3.5px;
   cursor: pointer;
   z-index: 10;
   /* Ensures it appears above other elements */
+  text-align: center;
+
 }
 
 #restart-button {

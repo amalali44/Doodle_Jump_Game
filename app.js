@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let doodlerLeftSpace = 50;
     let startPoint = 150;
     let doodlerBottomSpace = startPoint;
-    const gravity = 1.8;
+    const gravity = 9.8;
     let upTimerId;
     let downTimerId;
     let isJumping = true;
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 startTitle.style.display = 'none';
                 instructions.style.display = 'none';
             }
-
+            // To do: fix the title so that it shows up when a round is over and replayed
             createPlatforms();
             createDoodler();
             setInterval(movePlatforms, 30);

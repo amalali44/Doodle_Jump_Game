@@ -6,8 +6,8 @@
   font-size: 80px;
   text-align: center;
   color: rgb(94, 3, 65);
-
-
+  margin: 0 auto;
+  /* Center grid horizontally on the page */
 }
 
 .doodler {
@@ -27,17 +27,14 @@
 
 #start-title {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 60px;
-  position: absolute;
   font-family: 'Pacifico', cursive;
   color: #ca2755;
   text-align: center;
   white-space: nowrap;
-  /* Prevent the text from wrapping to the next line */
-
   z-index: 10;
 }
 
@@ -50,13 +47,12 @@
   font-size: 25px;
   white-space: nowrap;
   font-family: 'Pacifico', cursive;
-  font-variant: inherit;
   color: #c04367b8;
   text-align: center;
   z-index: 10;
 }
 
-/* To do: fix the title and buttons to stay within the background like the scoreboard does*/
+/* Center start button inside grid */
 #start-button {
   position: absolute;
   top: 60%;
@@ -65,7 +61,6 @@
   padding: 10px 20px;
   font-size: 25px;
   font-family: 'Pacifico', cursive;
-  /* Use a more cursive font */
   background-color: #e089a2;
   color: white;
   border: 1px solid #ab546c;
@@ -73,14 +68,13 @@
   border-width: 3.5px;
   cursor: pointer;
   z-index: 10;
-  /* Ensures it appears above other elements */
   text-align: center;
-
 }
 
+/* Center retry button inside grid */
 #restart-button {
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 20px;

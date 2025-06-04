@@ -177,17 +177,21 @@ document.addEventListener('DOMContentLoaded', () => {
             highestScore = score;
         }
 
-        while (grid.firstChild) {
-            grid.removeChild(grid.firstChild);
-        }
+        // Remove only game elements, not UI buttons/titles
+        document.querySelectorAll('.platform, .doodler').forEach(el => el.remove());
 
-        // Display the current score and highest score using the CSS class
-        grid.innerHTML = `
-            <div class="score-container">
-                Current Score: <span class="current-score">${score}</span><br>
-                Highest Score: <span class="highest-score">${highestScore}</span>
-            </div>
+        // Remove any existing score container
+        const oldScoreDiv = grid.querySelector('.score-container');
+        if (oldScoreDiv) oldScoreDiv.remove();
+
+        // Create and append the score container
+        const scoreDiv = document.createElement('div');
+        scoreDiv.className = 'score-container';
+        scoreDiv.innerHTML = `
+            Current Score: <span class="current-score">${score}</span><br>
+            Highest Score: <span class="highest-score">${highestScore}</span>
         `;
+        grid.appendChild(scoreDiv);
 
         clearInterval(upTimerId);
         clearInterval(downTimerId);
@@ -196,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show the retry button
         restartButton.style.display = 'block';
-        restartButton.addEventListener('click', goToStartScreen);
+        restartButton.onclick = goToStartScreen;
     }
 
     function goToStartScreen() {
@@ -207,12 +211,18 @@ document.addEventListener('DOMContentLoaded', () => {
         doodlerBottomSpace = startPoint;
         platforms = [];
 
-        // Clear the grid and reset the UI
-        grid.innerHTML = '';
-        restartButton.style.display = 'none';
+        // Remove the score container if it exists
+        const scoreDiv = grid.querySelector('.score-container');
+        if (scoreDiv) scoreDiv.remove();
 
-        // Show the start button
+        restartButton.style.display = 'none';
         startButton.style.display = 'block';
+
+        // Show the title and instructions again
+        const startTitle = document.getElementById('start-title');
+        const instructions = document.getElementById('instructions');
+        if (startTitle) startTitle.style.display = 'block';
+        if (instructions) instructions.style.display = 'block';
     }
 
     function start() {
